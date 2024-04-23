@@ -1,0 +1,16 @@
+<html>
+<head><title>Search Results</title></head>
+<body>
+    <h1>Results for '{{ query }}'</h1>
+    {% if results %}
+        <ul>
+        {% for doc, score in results %}
+            <li>{{ doc }} (Score: {{ score }})</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
+

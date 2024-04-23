@@ -1,0 +1,120 @@
+ Web Document Search Engine
+
+ Overview
+
+This project develops a full-stack application designed to crawl, index, and search web documents efficiently. Utilizing Flask for the web interface, Scrapy for crawling, and Scikit-Learn for indexing, the system provides a robust platform for querying and retrieving information from the web.
+
+ Features
+
+- **Web Crawling**: Automatically fetch data from specified start URLs using Scrapy.
+- **Document Indexing**: Use TfidfVectorizer from Scikit-Learn to index the documents for quick retrieval.
+- **Search Interface**: A Flask-based web application that allows users to submit search queries and view results.
+- **Natural Language Processing**: Integration of NLTK for enhanced text processing.
+
+ Installation
+
+ Prerequisites
+
+- Python 3.10+
+- pip (Python package installer)
+
+ Setting up the environment
+
+1. Clone the repository:
+   ```
+   git@github.com:brindha009/Web-Document-Search-Engine.git
+   cd project-repository
+   ```
+
+2. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+ Usage
+
+ Starting the Crawler
+
+Run the Scrapy crawler to fetch and store documents:
+```
+python run_crawler.py
+```
+
+ Loading the Documents
+
+After crawling, load the documents into the indexer:
+```
+python load_documents.py
+```
+
+ Running the Web Application
+
+To run the web application, you need to first ensure that the Flask environment is properly set up and all dependencies are installed. Here's a step-by-step guide on how to get the application running:
+
+ Step 1: Set Environment Variables
+
+Before running the Flask application, it's important to set the necessary environment variables. This includes configuring the Flask application to run in development mode to enable features such as the debugger and auto-reloader.
+
+On Windows, use the following commands in your command prompt:
+
+```bash
+set FLASK_APP=app.py
+set FLASK_ENV=development
+```
+
+On macOS or Linux, use:
+
+```bash
+export FLASK_APP=app.py
+export FLASK_ENV=development
+```
+
+ Step 2: Initialize the Indexer and Load Data
+
+Ensure that your data indexing is complete before starting the server. If your application includes a step to load documents into the indexer (as suggested in previous setup steps), make sure this is done so that the search functionality will work correctly.
+
+```bash
+python load_documents.py
+```
+
+ Step 3: Start the Flask Application
+
+With the environment variables set and data loaded, you can start the Flask application. Run the following command in your terminal:
+
+```bash
+flask run
+```
+
+This command starts a local server. By default, Flask applications run on port 5000.
+
+ Step 4: Access the Web Interface
+
+Once the Flask server is running, open a web browser and navigate to the following URL:
+
+```
+http://localhost:5000
+```
+
+This URL will take you to the homepage of your web application, where you can interact with the search functionality. Typically, this page will have a search box where users can enter their search queries.
+
+ Step 5: Using the Search Functionality
+
+Enter a search term into the search box and submit the query. The application will process the query using the indexed data and return a list of results that match the search criteria. The results are typically displayed on the same page or redirected to a results page where the documents or web pages that most closely match the search terms are listed.
+
+ Additional Features
+
+- **Debugging**: Since `FLASK_ENV` is set to development, you'll have access to an interactive debugger in case something goes wrong.
+- **Auto-reload**: The server will automatically reload if you make any changes to the code, which is helpful during development.
+
+ Conclusion
+
+Running the Flask web application is straightforward once you have configured the environment and ensured that all components are correctly set up. This setup provides a robust environment for developing and testing web applications locally. After testing locally, you can proceed to deploy the application to a production environment if needed.
+ Testing
+
+Run the unittests to ensure everything is set up correctly:
+```
+python -m unittest discover
+```
+
+
+
